@@ -26,7 +26,7 @@ Documentation for accessing and setting credentials for customer_accessCode.
 You must initialize the client with *OAuth 2.0 Authorization Code Grant* credentials as shown in the following code snippet.
 
 ```java
-import com.shutterstock.api.ShutterstockApiExplorerClient;
+import com.shutterstock.api.ShutterstockClient;
 import com.shutterstock.api.authentication.CustomerAccessCodeModel;
 import com.shutterstock.api.exceptions.ApiException;
 import com.shutterstock.api.models.OauthScopeCustomerAccessCode;
@@ -36,7 +36,7 @@ import java.util.Arrays;
 
 public class Program {
     public static void main(String[] args) {
-        ShutterstockApiExplorerClient client = new ShutterstockApiExplorerClient.Builder()
+        ShutterstockClient client = new ShutterstockClient.Builder()
             .customerAccessCodeCredentials(new CustomerAccessCodeModel.Builder(
                     "OAuthClientId",
                     "OAuthClientSecret",
@@ -173,7 +173,7 @@ Now that an access token is set, `/callapi` route can use the client to make aut
 ```java
 package com.example;
 
-import com.shutterstock.api.ShutterstockApiExplorerClient;
+import com.shutterstock.api.ShutterstockClient;
 import com.shutterstock.api.authentication.CustomerAccessCodeModel;
 import com.shutterstock.api.http.client.LoggingConfiguration.Level;
 import com.shutterstock.api.models.OauthScope;
@@ -189,10 +189,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/")
 public class MainController {
-    private ShutterstockApiExplorerClient client;
+    private ShutterstockClient client;
 
     public MainController() {
-        client = new ShutterstockApiExplorerClient.Builder()
+        client = new ShutterstockClient.Builder()
             .customerAccessCodeCredentials(new CustomerAccessCodeModel.Builder(
                     "OAuthClientId",
                     "OAuthClientSecret",

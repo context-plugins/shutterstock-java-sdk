@@ -73,12 +73,12 @@ As we are using `org.apache.logging.log4j` dependency which itself provides its 
 
 ### Client Initialization with Custom Logger
 
-The following example uses the `LoggerFactory.getLogger` to get the underlying log4j implementation from the project's build path for ShutterstockApiExplorerClient initialization.
+The following example uses the `LoggerFactory.getLogger` to get the underlying log4j implementation from the project's build path for ShutterstockClient initialization.
 
 ```java
 package examples;
 
-import com.shutterstock.api.ShutterstockApiExplorerClient;
+import com.shutterstock.api.ShutterstockClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.event.Level;
@@ -87,7 +87,7 @@ public class App {
     private static final Logger CUSTOM_LOGGER = LoggerFactory.getLogger(App.class);
 
     public static void main(String[] args) {
-        ShutterstockApiExplorerClient client = new ShutterstockApiExplorerClient.Builder()
+        ShutterstockClient client = new ShutterstockClient.Builder()
             .loggingConfig(builder -> builder
                 .logger(CUSTOM_LOGGER)
                 .level(Level.DEBUG)

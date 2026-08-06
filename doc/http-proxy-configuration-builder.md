@@ -24,10 +24,10 @@ To configure the SDK to use a proxy server, initialize the proxy configuration d
 ## Usage Example
 
 ```java
-import com.shutterstock.api.ShutterstockApiExplorerClient;
+import com.shutterstock.api.ShutterstockClient;
 import com.shutterstock.api.http.client.HttpProxyConfiguration;
 
-ShutterstockApiExplorerClient client = new ShutterstockApiExplorerClient.Builder()
+ShutterstockClient client = new ShutterstockClient.Builder()
   .httpClientConfig(configBuilder -> configBuilder
       .proxyConfig(new HttpProxyConfiguration.Builder("http://localhost",
           8080).auth("username", "password")))

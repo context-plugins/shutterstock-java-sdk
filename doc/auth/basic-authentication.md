@@ -23,12 +23,12 @@ Documentation for accessing and setting credentials for basic.
 You must provide credentials in the client as shown in the following code snippet.
 
 ```java
-import com.shutterstock.api.ShutterstockApiExplorerClient;
+import com.shutterstock.api.ShutterstockClient;
 import com.shutterstock.api.authentication.BasicModel;
 
 public class Program {
     public static void main(String[] args) {
-        ShutterstockApiExplorerClient client = new ShutterstockApiExplorerClient.Builder()
+        ShutterstockClient client = new ShutterstockClient.Builder()
             .basicCredentials(new BasicModel.Builder(
                     "Username",
                     "Password"

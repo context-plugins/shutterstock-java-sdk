@@ -15,7 +15,7 @@ The API client can be initialized as follows:
 
 ```java
 import com.shutterstock.api.Environment;
-import com.shutterstock.api.ShutterstockApiExplorerClient;
+import com.shutterstock.api.ShutterstockClient;
 import com.shutterstock.api.authentication.BasicModel;
 import com.shutterstock.api.authentication.CustomerAccessCodeModel;
 import com.shutterstock.api.exceptions.ApiException;
@@ -28,7 +28,7 @@ import org.slf4j.event.Level;
 
 public class Program {
     public static void main(String[] args) {
-        ShutterstockApiExplorerClient client = new ShutterstockApiExplorerClient.Builder()
+        ShutterstockClient client = new ShutterstockClient.Builder()
             .loggingConfig(builder -> builder
                     .level(Level.DEBUG)
                     .requestConfig(logConfigBuilder -> logConfigBuilder.body(true))
